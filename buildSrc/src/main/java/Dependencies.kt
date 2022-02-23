@@ -26,8 +26,9 @@ object Versions {
     const val designConstrlayout = "2.1.1"
     // Test
     const val testJunit = "4.12"
+    const val extJunit = "1.1.2"
     const val testRunner = "1.2.0"
-    const val testEspressocore = "3.2.0"
+    const val testEspressocore = "3.3.0"
     // Room
     const val room = "2.4.0"
     const val roomJDBC = "3.34.0"
@@ -83,6 +84,7 @@ object Design {
 
 object Tests {
     const val junit = "junit:junit:${Versions.testJunit}"
+    const val extjunit = "androidx.test.ext:junit:${Versions.extJunit}"
     const val runner = "androidx.test:runner:${Versions.testRunner}"
     const val espressocore = "androidx.test.espresso:espresso-core:${Versions.testEspressocore}"
     const val filetreedir = "'libs'"

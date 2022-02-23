@@ -40,4 +40,39 @@ class EmailValidatorTest {
     fun emailValidator_NullEmail_ReturnsFalse() {
         Assert.assertFalse(EmailValidator.isValidEmail(null))
     }
+
+    /** Пункт 1 ДЗ: Негативные тесты */ //region
+    @Test
+    fun emailValidator_EmptyDomain_ReturnsFalse() {
+        Assert.assertFalse(EmailValidator.isValidEmail("avk@"))
+    }
+    @Test
+    fun emailValidator_TwoAT_ReturnsFalse() {
+        Assert.assertFalse(EmailValidator.isValidEmail("avk@@yandex.ru"))
+    }
+    @Test
+    fun emailValidator_EmptyAT_ReturnsFalse() {
+        Assert.assertFalse(EmailValidator.isValidEmail("avkyandex.ru"))
+    }
+    @Test
+    fun emailValidator_AddRightSlash_ReturnsFalse() {
+        Assert.assertFalse(EmailValidator.isValidEmail("/avk@yandex.ru"))
+    }
+    @Test
+    fun emailValidator_AddLeftSlash_ReturnsFalse() {
+        Assert.assertFalse(EmailValidator.isValidEmail("\\avk@yandex.ru"))
+    }
+    @Test
+    fun emailValidator_AddSpaceInAddress_ReturnsFalse() {
+        Assert.assertFalse(EmailValidator.isValidEmail(" avk@yandex.ru"))
+    }
+    @Test
+    fun emailValidator_AddSpaceInDomain_ReturnsFalse() {
+        Assert.assertFalse(EmailValidator.isValidEmail("avk@yandex .ru"))
+    }
+    @Test
+    fun emailValidator_NotFullyDomain_ReturnsFalse() {
+        Assert.assertFalse(EmailValidator.isValidEmail("avk@.ru"))
+    }
+    //endregion
 }
